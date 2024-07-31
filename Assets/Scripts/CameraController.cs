@@ -6,9 +6,14 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 _offset = Vector3.zero; 
     [SerializeField] private float _smoothSpeed =1f;
     [SerializeField] private bool _followX = true; 
-    [SerializeField] private bool _followZ = true;  
+    [SerializeField] private bool _followZ = true;
 
-    void LateUpdate()
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
+    private void LateUpdate()
     {
         Vector3 desiredPosition = _target.position + _offset;
         Vector3 smoothedPosition = transform.position;

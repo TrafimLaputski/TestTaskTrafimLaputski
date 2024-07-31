@@ -19,10 +19,10 @@ public class PlayerMovment
 
     public void Move(Vector2 direction)
     {
-        Vector3 moveVector = new Vector3(direction.x, 0, direction.y);
+        Vector3 moveVector = new Vector3(direction.x * _speed, _playerBody.velocity.y, direction.y * _speed);
+        Vector3 lookVector = new Vector3(direction.x, 0, direction.y);
 
-        _playerBody.velocity = moveVector * _speed;
-
-        _playerBody.gameObject.transform.LookAt(_playerBody.transform.position + moveVector);
+        _playerBody.velocity = moveVector ;
+        _playerBody.gameObject.transform.LookAt(_playerBody.transform.position + lookVector);
     }
 }
