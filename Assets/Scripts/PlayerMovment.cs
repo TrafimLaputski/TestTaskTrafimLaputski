@@ -1,14 +1,20 @@
 using UnityEngine;
 
-public class PlayerMovment : MonoBehaviour
+public class PlayerMovment
 {
-    [SerializeField] private Rigidbody _playerBody = null;
-    [SerializeField] private float _speed = 0f;
-    [SerializeField] private Joystick _moveJoystick = null;
+    private Rigidbody _playerBody = null;
+    private float _speed = 0f;
 
-    private void Start()
+    public Rigidbody PlayerBody
     {
-        _moveJoystick.InputAction += Move;
+        get { return _playerBody; }
+        set { _playerBody = value; }
+    }
+
+    public float Speed
+    {
+        get { return _speed; }
+        set { _speed = value; }
     }
 
     public void Move(Vector2 direction)
@@ -17,6 +23,6 @@ public class PlayerMovment : MonoBehaviour
 
         _playerBody.velocity = moveVector * _speed;
 
-        _playerBody.gameObject.transform.LookAt(transform.position + moveVector);
+        _playerBody.gameObject.transform.LookAt(_playerBody.transform.position + moveVector);
     }
 }

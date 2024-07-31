@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class AnimatorController : MonoBehaviour
+public class AnimatorController
 {
-    [SerializeField] private Animator _animator = null;
-    [SerializeField] private Joystick _moveJoystick = null;
+    private Animator _animator = null;
 
-    private void Start()
-    {
-        _moveJoystick.InputAction += AnimationMove;
+    public Animator Animator 
+    { 
+        get { return _animator; } 
+        set { _animator = value; }
     }
 
-    private void AnimationMove(Vector2 direction)
+    public void AnimationMove(Vector2 direction)
     {
         if (direction != Vector2.zero)
         {

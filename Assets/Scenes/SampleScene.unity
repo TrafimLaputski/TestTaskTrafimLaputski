@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 347094649}
   - component: {fileID: 347094652}
   - component: {fileID: 347094650}
-  - component: {fileID: 347094651}
   - component: {fileID: 347094653}
   m_Layer: 0
   m_Name: Player
@@ -355,21 +354,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &347094651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347094648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6801dbdaaa384ca4895ba7fe3a44a8b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerBody: {fileID: 347094650}
-  _speed: 3
-  _moveJoystick: {fileID: 1766932804}
 --- !u!136 &347094652
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -402,11 +386,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 347094648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2001ec9e23dcf004d8e4776012fcc47c, type: 3}
+  m_Script: {fileID: 11500000, guid: 388ab6ca54735a342927a871a59c89fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1335135713}
-  _moveJoystick: {fileID: 1766932804}
+  _speed: 2
+  _playerBody: {fileID: 347094650}
+  _joystickMove: {fileID: 1766932804}
+  _playerAnimator: {fileID: 1335135713}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +614,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1038155110
 Transform:
@@ -730,7 +716,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1121632046
 Transform:
@@ -879,7 +865,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1714947513
 Transform:
@@ -1088,7 +1074,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1829780487
 MeshCollider:
