@@ -14,6 +14,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler
     private Vector2 _radius = Vector2.zero;
     private Vector2 _input = Vector2.zero;
 
+    private bool _isDragging = false;
+
     private void Start()
     {
         JoystickAssembly();
@@ -31,10 +33,14 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler
         _input = Vector2.zero;
         _handler.localPosition = Vector2.zero;
         InputAction?.Invoke(Vector2.zero);
+
+        _isDragging = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        _isDragging = true;
+
         float x = (eventData.position.x - transform.position.x) / _radius.x;
         float y = (eventData.position.y - transform.position.y) / _radius.y;
 
@@ -47,7 +53,13 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler
         }
 
         _handler.localPosition = _input * _radius;
+    }
 
-        InputAction?.Invoke(_input);
+    private void Update()
+    {
+        if (_isDragging)
+        {
+            InputAction?.Invoke(_input);
+        }
     }
 }
