@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerBody: {fileID: 347094650}
-  _speed: 1
+  _speed: 3
   _moveJoystick: {fileID: 1766932804}
 --- !u!136 &347094652
 CapsuleCollider:
@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -578,6 +579,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37877cffb9a5e74491368d1ad78db23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 347094649}
+  _offset: {x: 0, y: 18, z: -23}
+  _smoothSpeed: 0.125
+  _followX: 1
+  _followZ: 1
 --- !u!1 &1038155109
 GameObject:
   m_ObjectHideFlags: 0
